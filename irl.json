@@ -61,6 +61,11 @@
           "format": "date-time",
           "type": "string"
         },
+        "photoHash": {
+          "description": "hash of a photo that the issuer attests represents the issuee accurately, in real life",
+          "format": "cesr",
+          "type": "string"
+        },
         "basis": {
           "description": "strongest reason that issuer can cite as proof that they have a correct view of the issuee's name/identity",
           "type": "string",
