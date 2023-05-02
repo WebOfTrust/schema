@@ -66,6 +66,18 @@
           "format": "cesr",
           "type": "string"
         },
+        "confirmedHandles": {
+          "description": "handles that the issuer has personally used to interact with the issuee",
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 1,
+          "items": {
+            "$comment": "First part of string identifies a scope; second part is handle in that scope",
+            "examples": ["github:abc123.xyz", "twitter:tweetsasx", "mailto:fred@acme.com", "linkedin:foobargeek", "btc:bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq"],
+            "type": "string",
+            "pattern": "^([a-z0-9-_.]+:([A-Za-z0-9@-_.]+$"
+          }
+        },
         "basis": {
           "description": "strongest reason that issuer can cite as proof that they have a correct view of the issuee's name/identity",
           "type": "string",
