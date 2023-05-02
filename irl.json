@@ -1,0 +1,75 @@
+{
+  "$id": "",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "IRL",
+  "description": "Document that an issuer knows the issuee to be a human being, based one or more face-to-face interactions.",
+  "$comment": "These credentials are intentionally public and untargeted. Hence they lack an issuee and don't support compaction.",
+  "type": "object",
+  "credentialType": "IRLCredential",
+  "version": "1.0.0",
+  "required": [
+    "d",
+    "i",
+    "ri",
+    "s",
+    "a"
+  ],
+  "properties": {
+    "v": {
+      "description": "version string using semver.org conventions",
+      "type": "string"
+    },
+    "d": {
+      "description": "SAID of the credential",
+      "type": "string"
+    },
+    "i": {
+      "description": "AID of the issuer",
+      "type": "string"
+    },
+    "ri": {
+      "description": "registry for issuer's credential status",
+      "type": "string"
+    },
+    "s": {
+      "description": "SAID of this schema",
+      "type": "string"
+    },
+    "a": {
+      "$id": "",
+      "description": "Attributes block",
+      "type": "object",
+      "required": [
+        "pubkey"
+      ],
+      "properties": {
+        "issueeID": {
+          "description": "AID that issuee controls, according to issuer",
+          "type": "string"
+        },
+        "knownAs": {
+          "description": "name by which issuer knows issuee (may be a nickname, a first or last name only, or a full name)",
+          "type": "string"
+        },
+        "minutesIRL": {
+          "description": "how many minutes has issuer spent with issuee, face-to-face in real life?",
+          "type": "integer",
+          "exclusiveMin": 0
+        },
+        "issueDate": {
+          "description": "time issuer intends key binding to start; if missing, starts on issuance",
+          "format": "date-time",
+          "type": "string"
+        },
+        "basis": {
+          "description": "strongest reason that issuer can cite as proof that they have a correct view of the issuee's name/identity",
+          "type": "string",
+          "$comment": "Enum omitted to stay flexible, but use examples if they apply.",
+          "examples": ["nist-ial1", "nist-ial2", "nist-ial3", "family", "friend", "colleague", "acquaintance"],
+          "pattern": "^[-a-z0-0 ]+$"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
