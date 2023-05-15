@@ -1,22 +1,23 @@
 {
   "$id": "",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "IRL",
+  "title": "face-to-face",
   "description": "Assert that an issuer knows the issuee to be a human being, based one or more face-to-face interactions.",
-  "$comment": "These credentials are intentionally public and untargeted. Hence they lack an issuee and don't support compaction.",
+  "$comment": "These credentials have no edges. They can be chained by showing that the issuer's identifier is also an identifier associated with another credential of whatever type, but they do not require chaining.",
   "type": "object",
-  "credentialType": "IRLCredential",
+  "credentialType": "faceToFaceCredential",
   "version": "1.0.0",
   "required": [
     "d",
     "i",
     "ri",
     "s",
-    "a"
+    "a",
+    "r"
   ],
   "properties": {
     "v": {
-      "description": "version string using semver.org conventions",
+      "description": "Version string using semver.org conventions",
       "type": "string"
     },
     "d": {
@@ -24,11 +25,11 @@
       "type": "string"
     },
     "i": {
-      "description": "AID of the issuer",
+      "description": "Identifier of the issuer",
       "type": "string"
     },
     "ri": {
-      "description": "registry for issuer's credential status",
+      "description": "Registry for issuer's credential status",
       "type": "string"
     },
     "s": {
@@ -36,65 +37,84 @@
       "type": "string"
     },
     "a": {
-      "$id": "",
-      "description": "Attributes block",
-      "type": "object",
-      "required": [
-        "pubkey"
-      ],
-      "properties": {
-        "issueeID": {
-          "description": "AID that issuee controls, according to issuer",
+      "oneOf": [
+        {
+          "description": "SAID of attributes block",
           "type": "string"
         },
-        "knownAs": {
-          "description": "name by which issuer knows issuee (may be a nickname, a first or last name only, or a full name)",
-          "type": "string"
-        },
-        "minutesIRL": {
-          "description": "how many minutes has issuer spent with issuee, face-to-face in real life?",
-          "type": "integer",
-          "exclusiveMin": 0
-        },
-        "issueDate": {
-          "description": "time issuer intends key binding to start; if missing, starts on issuance",
-          "format": "date-time",
-          "type": "string"
-        },
-        "biometricHashes": {
-          "description": "hashs of photos, voiceprints, or biometric enrollments that the issuer attests represents the issuee accurately, in real life",
-          "type": "array",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "format": "cesr",
-            "type": "string"
-          },
-        },
-        "confirmedHandles": {
-          "description": "handles that the issuer has personally used to interact with the issuee",
-          "type": "array",
-          "uniqueItems": true,
-          "minItems": 1,
-          "items": {
-            "$comment": "First part of string identifies a scope; second part is handle in that scope",
-            "examples": ["github:abc123.xyz", "twitter:tweetsasx", "mailto:fred@acme.com", "linkedin:foobargeek", "btc:bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq"],
-            "type": "string",
-            "pattern": "^([a-z0-9-_.]+:([A-Za-z0-9@-_.]+$"
+        {
+          "$id": "EDv4wiOMHE125CXu-EuOd0YRXz-AgpLilJfjoODFqtHD",
+          "description": "Attributes block",
+          "type": "object",
+          "required": ["d", "u", "i", "freshDate", "basis"],
+          "properties": {
+            "d": {
+              "description": "SAID of attributes block",
+              "type": "string"
+            },
+            "u": {
+              "description": "A salty nonce",
+              "type": "string"
+            },
+            "i": {
+              "description": "Identifier that issuee controls, according to issuer",
+              "type": "string"
+            },
+            "knownAs": {
+              "description": "Name by which issuer knows issuee (may be a nickname, a first or last name only, or a full name)",
+              "type": "string"
+            },
+            "minutesIRL": {
+              "description": "How many minutes has issuer spent with issuee, face-to-face in real life?",
+              "type": "integer",
+              "exclusiveMin": 0
+            },
+            "freshDate": {
+              "description": "Time as of which the issuer considered the face-to-face interaction (and any other information about the issuee) to be fresh. This may or may not be the time of issuance.",
+              "format": "date-time",
+              "type": "string"
+            },
+            "biometricHashes": {
+              "description": "Hashes of photos, voiceprints, or biometric enrollments that the issuer attests represents the issuee accurately, in real life",
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "format": "cesr",
+                "type": "string"
+              }
+            },
+            "confirmedHandles": {
+              "description": "Handles that the issuer has personally used to interact with the issuee",
+              "type": "array",
+              "uniqueItems": true,
+              "minItems": 1,
+              "items": {
+                "$comment": "First part of string identifies a scope; second part is handle in that scope",
+                "examples": ["github:abc123.xyz", "twitter:tweetsasx", "mailto:fred@acme.com", "linkedin:foobargeek", "btc:bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq"],
+                "type": "string",
+                "pattern": "^([a-z0-9-_.]+):([A-Za-z0-9@-_.]+)$"
+              }
+            },
+            "basis": {
+              "description": "Strongest reason that issuer wants to cite as proof that they have accurate knowledge of the issuee",
+              "type": "string",
+              "$comment": "Enum omitted to allow flexibility. However, use example values if they apply.",
+              "examples": ["nist-ial1", "nist-ial2", "nist-ial3", "family", "friend", "colleague", "acquaintance"],
+              "pattern": "^[-a-z0-0 ]+$"
+            },
+            "caveats": {
+              "description": "Note about limits on issuer observations of issuee during face-to-face",
+              "type": "string"
+            }
           }
-        },
-        "basis": {
-          "description": "strongest reason that issuer can cite as proof that they have a correct view of the issuee's name/identity",
-          "type": "string",
-          "$comment": "Enum omitted to stay flexible, but use examples if they apply.",
-          "examples": ["nist-ial1", "nist-ial2", "nist-ial3", "family", "friend", "colleague", "acquaintance"],
-          "pattern": "^[-a-z0-0 ]+$"
-        },
-        "caveats": {
-          "description": "note of limits on issuer observations of issuee during face-to-face",
-          "type": "string"
         }
-      }
+      ]
+    },
+    "r": {
+      "description": "SAID of rules block",
+      "type": "string",
+      "format": "cesr"
     }
   },
   "additionalProperties": false
