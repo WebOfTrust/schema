@@ -19,6 +19,9 @@ As with any credential, the trust that a verifier places in an individual face-t
 
 In most situations, face-to-face interactions are reciprocal; each party can achieve similar confidence in the other party's humanness. Reciprocal issuance is encouraged whenever conditions permit.
 
+### Schema
+See [face-to-face.schema.json](face-to-face.schema.json) and also [rules.json](rules.json).
+
 ### Privacy
 
 Face-to-face credentials allow (but do not require) the issuer to assert the name (`knownAs` field) and/or handles (`confirmedHandles` field) that they have *personally* used to interact with the issuee. They also allow (but do not require) the issuer to endorse the hash of biometrics (e.g., a photo or voice print) that they agree characterized the issuee as they observed them in real life interactions (`biometricHashes` field). The issuee can carry the actual biometric data and present it to verifiers, thus allowing a verifier to confirm that they are interacting with the same human that the issuer knew.
@@ -29,5 +32,5 @@ By design, face-to-face credentials do not protect the privacy of the issuer. Th
 
 ### Governance Framework
 
-These credentials are governed by rules to enhance assurance, discourage abuse, and keep use cases crisp. The current rules are stated in [rules.json](rules.json) and are identified by SAID `EE1ycWdqBAE_4F-WsXZM83CrjpyCClYgPeINk104bLKX`. New governance frameworks can be written that modify these rules, but each credential MUST reference its associated rules (in the `r` field) using a SAID or a similar pointer to immutable content. The act of issuing or receiving a face-to-face credential constitutes binding acceptance of the rules.
+These credentials are governed by rules to enhance assurance, discourage abuse, and keep use cases crisp. The current rules are stated in [rules.json](rules.json) and are identified by SAID `EDzA-H5YR2oc0sEUKzy_one8-jY2dxdOfjtT8PJJQds8`. New governance frameworks can be written that modify these rules, but each credential MUST reference its associated rules (in the `r` field) using a SAID or a similar pointer to immutable content. The act of issuing or receiving a face-to-face credential constitutes binding acceptance of the rules.
 

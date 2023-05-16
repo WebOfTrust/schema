@@ -5,5 +5,6 @@
   "EBNaNu-M9P5cgrnfl2Fvymy4E_jvxxyjb70PRtiANlJy": "https://github.com/WebOfTrust/schema/blob/main/vLEI/legal-entity-official-organizational-role-vLEI-credential.schema.json",
   "ENPXp1vQzRF6JwIuS-mp2U8Uf1MoADoP_GqQ62VsDZWY": "https://github.com/WebOfTrust/schema/blob/main/vLEI/legal-entity-vLEI-credential.schema.json",
   "EKA57bKBKxr_kN7iN5i7lMUxpMG-s19dRcmov1iDxz-E": "https://github.com/WebOfTrust/schema/blob/main/vLEI/oor-authorization-vlei-credential.schema.json",
-  "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao": "https://github.com/WebOfTrust/schema/blob/main/vLEI/qualified-vLEI-issuer-vLEI-credential.schema.json"
+  "EBfdlu8R27Fbx-ehrqwImnK-8Cm79sqbAQ4MmvEAYqao": "https://github.com/WebOfTrust/schema/blob/main/vLEI/qualified-vLEI-issuer-vLEI-credential.schema.json",
+  "EBVrnt_umyfpplerm_2-Sopy2LYMv0ov80KyBhCtEU2K": "face-to-face/face-to-face.schema.json"
 }
