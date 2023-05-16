@@ -1,5 +1,5 @@
 {
-  "$id": "",
+  "$id": "EEPCMp4TmapUMUA8tQr_5TmujjvFDkzdZuQEMf2AfGIq",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Bind Key",
   "description": "Declare that issuer uses a cryptographic key that's not directly managed by the KEL (e.g., to conform to an external standard). Issuing this ACDC makes key binding provable and revokable.",
@@ -16,7 +16,7 @@
   ],
   "properties": {
     "v": {
-      "description": "version string using semver.org conventions",
+      "description": "version string using ACDC conventions",
       "type": "string"
     },
     "d": {
