@@ -2,7 +2,7 @@
 
 The Global Legal Entity Identifier Foundation (GLEIF) has published the verifiable LEI (vLEI) Ecosystem Governance Framework [(EGF)](https://www.gleif.org/en/vlei/introducing-the-vlei-ecosystem-governance-framework) based on the Trust over IP Governance Metamodel. The vLEI Ecosystem Governance Framework, which has been designed from the ground up to complement GLEIF’s existing LEI governance, defines the vLEI operational model and describes how the new digital trust ecosystem’s range of vLEI issuing stakeholders will qualify for and perform their roles in the Global LEI System.
 
-The credentials issued within the EGF are define below:
+The credentials issued within the EGF are defined below:
 
 ## Qualified vLEI Issuer Credential
 
