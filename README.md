@@ -10,4 +10,4 @@ To submit a schema, create a PR that populates a folder of data about your new c
 2. An `index.md` file that explains why you created the schema, what use cases it addresses, what rules are expected to govern its behavior, how to find the community that uses it, and so forth.
 3. One or more `example*.json` or `test*.json` files that demonstrate data possibilities. Example files are casual, hand-written constructions that show something interesting but don't obey the schema fully. Test files should be the result of rigorous issuance and should therefore verify in tests.
 
-Besides the new folder with these three kinds of data, your PR should also update `/registry.json` with a new row for each new schema you're introducing. This allows your schema to be trivially discoverable without a web crawl.
+Besides the new folder with these three kinds of data, your PR should also update [`/registry.json`](registry.json) with a new row for each new schema you're introducing. This allows your schema to be trivially discoverable without a web crawl.
