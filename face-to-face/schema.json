@@ -1,5 +1,5 @@
 {
-  "$id": "",
+  "$id": "EMwdW1RO1TvOmTMrli_fej8GYn-3tSl27xMyDDf0jigK",
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "face-to-face",
   "description": "Assert that an issuer knows the issuee to be a human being, based one or more face-to-face interactions.",
@@ -17,7 +17,7 @@
   ],
   "properties": {
     "v": {
-      "description": "Version string using semver.org conventions",
+      "description": "Version string using ACDC conventions",
       "type": "string"
     },
     "d": {
@@ -46,7 +46,7 @@
           "$id": "EDv4wiOMHE125CXu-EuOd0YRXz-AgpLilJfjoODFqtHD",
           "description": "Attributes block",
           "type": "object",
-          "required": ["d", "u", "i", "freshDate", "basis"],
+          "required": ["d", "u", "i", "dt", "minutes"],
           "properties": {
             "d": {
               "description": "SAID of attributes block",
@@ -64,13 +64,13 @@
               "description": "Name by which issuer knows issuee (may be a nickname, a first or last name only, or a full name)",
               "type": "string"
             },
-            "minutesIRL": {
-              "description": "How many minutes has issuer spent with issuee, face-to-face in real life?",
+            "minutes": {
+              "description": "At least how many minutes has issuer spent with issuee, face-to-face in real life?",
               "type": "integer",
               "exclusiveMin": 0
             },
-            "freshDate": {
-              "description": "Time as of which the issuer considered the face-to-face interaction (and any other information about the issuee) to be fresh. This may or may not be the time of issuance.",
+            "dt": {
+              "description": "Time as of which the issuer asserts the face-to-face interaction (and any other information about the issuee) to be fresh. This may be before the time of issuance.",
               "format": "date-time",
               "type": "string"
             },
@@ -97,10 +97,10 @@
               }
             },
             "basis": {
-              "description": "Strongest reason that issuer wants to cite as proof that they have accurate knowledge of the issuee",
+              "description": "Strongest reason that issuer wants to cite as proof that they have accurate knowledge of the issuee as a human being",
               "type": "string",
-              "$comment": "Enum omitted to allow flexibility. However, use example values if they apply.",
-              "examples": ["nist-ial1", "nist-ial2", "nist-ial3", "family", "friend", "colleague", "acquaintance"],
+              "$comment": "Enum omitted to allow flexibility. However, use example values if they apply. NIST IAL values are mostly about identification, not personhood, but may provide clarity about interaction type.",
+              "examples": ["family", "friend", "colleague", "acquaintance", "nist-ial1", "nist-ial2", "nist-ial3"],
               "pattern": "^[-a-z0-0 ]+$"
             },
             "caveats": {
@@ -114,6 +114,7 @@
     "r": {
       "description": "SAID of rules block",
       "type": "string",
+      "const": "EE1ycWdqBAE_4F-WsXZM83CrjpyCClYgPeINk104bLKX",
       "format": "cesr"
     }
   },
