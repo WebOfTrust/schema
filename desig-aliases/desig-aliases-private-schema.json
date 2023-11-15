@@ -1,10 +1,10 @@
 {
-    "$id": "EBfa21x1Biai6bGW5jZP0urT1-hqXWOusVgdlmNSYdwL",
+    "$id": "EDthuv3Zf67Y_Ly_wpVm8TUKaoVKxXUKCyAI9VeofR7X",
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Identifier Authorization Private Attestation",
-    "description": "An alias designation private attestation by an AID controller, to designate a list of namespaced aliases of an AID by the AID's controller.",
+    "title": "Designated Aliases Private Attestation",
+    "description": "A private attestation listing the designated aliases of an AID controller.",
     "type": "object",
-    "credentialType": "AliasDesignationPrivateAttestation",
+    "credentialType": "DesignatedAliasesPrivateAttestation",
     "version": "1.0.0",
     "properties": {
         "v": {
@@ -47,7 +47,7 @@
                     "type": "string"
                 },
                 {
-                    "$id": "EDrKz5DhueGqlJYOYktdPDX0wJ9f-dVSiuwcJWCDAavF",
+                    "$id": "EMGRIPzrjqRrF9T_ka0mxs7JDpOpGDZwqb3sje4Nd6Mc",
                     "description": "Attributes block",
                     "type": "object",
                     "properties": {
@@ -56,7 +56,7 @@
                             "type": "string"
                         },
                         "dt": {
-                            "description": "Authorization date time",
+                            "description": "Designation date time",
                             "type": "string",
                             "format": "date-time"
                         },
@@ -88,7 +88,7 @@
                     "type": "string"
                 },
                 {
-                    "$id": "ECLt7Scjsf1inplLDNLoOpcPqq-nX8h5l56t1lY4HuyN",
+                    "$id": "EB5g3cx-Hr3kAtxWI_lM0hLX8CgKg4T_83Q19KPBRx8H",
                     "description": "Rules block",
                     "type": "object",
                     "properties": {
@@ -128,6 +128,17 @@
                                 }
                             }
                         },
+                        "privacyDisclaimer": {
+                            "description": "Privacy Disclaimer",
+                            "type": "object",
+                            "properties": {
+                                "l": {
+                                    "description": "Privacy-preservation expectations",
+                                    "type": "string",
+                                    "const": "This assertioin has been blinded with the UUID field, making this exchange of designated aliases private. Therefore, the assertion should be used in a privacy-preserving manner and the information should not be shared with any other party."
+                                }
+                            }
+                        },
                         "termsOfUse": {
                             "description": "Terms of use",
                             "type": "object",
@@ -145,6 +156,7 @@
                         "aliasDesignation",
                         "usageDisclaimer",
                         "issuanceDisclaimer",
+                        "privacyDisclaimer",
                         "termsOfUse"
                     ]
                 }

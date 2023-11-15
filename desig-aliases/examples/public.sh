@@ -1,24 +1,34 @@
 #!/bin/bash
 
-../update.sh
+# # updates the SAIDs of the schemas
+# ../update.sh
 
-alias="myself"
+alias="controller"
+reg_name="dAliases"
+d_alias_schema="EN6Oh5XSD5_q2Hgu-aqpdfbVepdpYpFlgz6zvJL5b_r5"
+
+#clear state from previous runs
 find /usr/local/var/keri/* -name "$alias" -type d -exec rm -rf {} + 2>/dev/null
 
-kli init --name "$alias" --salt 0ACDEyMzQ1Njc4OWxtbm9aBc --nopasscode --config-dir ./config --config-file config
-kli incept --name "$alias" --alias "$alias" --file ./config/config.json
+kli init --name "$alias" --salt 0AAQmsjh-C7kAJZQEzdrzwB7 --nopasscode --config-dir "./my-scripts" --config-file my-config
+kli incept --name "$alias" --alias "$alias" --file "./my-scripts/my-incept.json"
+kli status --name "$alias" --alias "$alias"
 
-kli vc registry incept --name "$alias" --alias "$alias" --registry-name authId
+kli vc registry incept --name "$alias" --alias "$alias" --registry-name "$reg_name"
 
-kli saidify --file ./desig-aliases-rules.json --label "d"
-kli saidify --file ./desig-aliases-attr.json --label "d"
+kli saidify --file ./desig-aliases-rules-public.json --label "d"
+kli saidify --file ./desig-aliases-attr-public.json --label "d"
 
-# # manually add rules example SAID and attribute example SAID to the desig-aliases.json
-# # read -p "Hit enter after you have added the SAIDs to the auth.json"
-# # kli saidify --file ./desig-aliases.json --label "d"
+# manually add rules example SAID and attribute example SAID to the desig-aliases.json
+read -p "Hit enter after you have added the registry SAID (and maybe attrs, rules, etc) to desig-aliases-public.json"
+kli saidify --file ./desig-aliases-public.json --label "d"
 
-kli oobi resolve --name issuer --oobi-alias issuer --oobi EPi_tVS3zDN4wo-T3NQb5pUtdeup98yoJ_hrNReD86xO
-kli vc create --name myself --alias myself --registry-name authId --schema EPi_tVS3zDN4wo-T3NQb5pUtdeup98yoJ_hrNReD86xO --data @desig-aliases-attr.json --rules @desig-aliases-rules.json
+kli oobi resolve --name "$alias" --oobi-alias myDesigAliases --oobi "http://127.0.0.1:7723/oobi/${d_alias_schema}"
+kli vc create --name "$alias" --alias "$alias" --registry-name "$reg_name" --schema "${d_alias_schema}" --credential @desig-aliases-public.json
+kli vc list --name "$alias" --alias "$alias" --issued --schema "${d_alias_schema}"
+
+SAID=$(kli vc list --name "$alias" --alias "$alias" --issued --said --schema "${d_alias_schema}")
+kli vc export --name "$alias" --alias "$alias" --said "${SAID}" --chain
 # SAID=$(kli vc list --name myself --alias myself --issued --said --schema EPi_tVS3zDN4wo-T3NQb5pUtdeup98yoJ_hrNReD86xO)
 # echo "SAID of the Authorized Identifiers attestation is: ${SAID}"
 
