@@ -1,0 +1,29 @@
+{
+    "$id": "EBMVc1eOhOaA7MdwAlAX3KcvJRTpFrc7_xcB_XveYAEE",
+    "description": "Attributes block",
+    "type": "object",
+    "properties": {
+        "d": {
+            "description": "Attributes block SAID",
+            "type": "string"
+        },
+        "dt": {
+            "description": "Designation date time",
+            "type": "string",
+            "format": "date-time"
+        },
+        "ids": {
+            "description": "List of namespaced/controlled AID aliases designated by the AID controller",
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "d",
+        "dt",
+        "ids"
+    ]
+}
