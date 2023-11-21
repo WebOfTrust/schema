@@ -6,6 +6,8 @@
 alias="controller"
 reg_name="dAliases"
 d_alias_schema="EN6Oh5XSD5_q2Hgu-aqpdfbVepdpYpFlgz6zvJL5b_r5"
+# da_schema_oobi="http://127.0.0.1:7723/oobi/${d_alias_schema}"
+da_schema_oobi="https://weboftrust.github.io/oobi/${d_alias_schema}"
 
 #clear state from previous runs
 find /usr/local/var/keri/* -name "$alias" -type d -exec rm -rf {} + 2>/dev/null
@@ -23,7 +25,7 @@ kli saidify --file ./desig-aliases-attr-public.json --label "d"
 read -p "Hit enter after you have added the registry SAID (and maybe attrs, rules, etc) to desig-aliases-public.json"
 kli saidify --file ./desig-aliases-public.json --label "d"
 
-kli oobi resolve --name "$alias" --oobi-alias myDesigAliases --oobi "http://127.0.0.1:7723/oobi/${d_alias_schema}"
+kli oobi resolve --name "$alias" --oobi-alias myDesigAliases --oobi "$da_schema_oobi"
 kli vc create --name "$alias" --alias "$alias" --registry-name "$reg_name" --schema "${d_alias_schema}" --credential @desig-aliases-public.json
 kli vc list --name "$alias" --alias "$alias" --issued --schema "${d_alias_schema}"
 

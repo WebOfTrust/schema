@@ -1,0 +1,61 @@
+{
+    "$id": "EHbxC6vD0mU49geUxIfcQtTxP2tAqay7QCz3CVzfSdHz",
+    "description": "Rules block",
+    "type": "object",
+    "properties": {
+        "d": {
+            "description": "Rules block SAID",
+            "type": "string"
+        },
+        "aliasDesignation": {
+            "description": "Alias designation",
+            "type": "object",
+            "properties": {
+                "l": {
+                    "type": "string",
+                    "const": "The issuer of this ACDC designates the identifiers in the ids field as the only allowed namespaced aliases of the issuer's AID."
+                }
+            }
+        },
+        "usageDisclaimer": {
+            "description": "Usage Disclaimer",
+            "type": "object",
+            "properties": {
+                "l": {
+                    "description": "Limitation of designation scope",
+                    "type": "string",
+                    "const": "This attestation only asserts designated aliases of the controller of the AID, that the AID controlled namespaced alias has been designated by the controller. It does not assert that the controller of this AID has control over the infrastructure or anything else related to the namespace other than the included AID."
+                }
+            }
+        },
+        "issuanceDisclaimer": {
+            "description": "Issuance Disclaimer",
+            "type": "object",
+            "properties": {
+                "l": {
+                    "description": "Accuracy of information",
+                    "type": "string",
+                    "const": "All information in a valid and non-revoked alias designation assertion is accurate as of the date specified."
+                }
+            }
+        },
+        "termsOfUse": {
+            "description": "Terms of use",
+            "type": "object",
+            "properties": {
+                "l": {
+                    "type": "string",
+                    "const": "Designated aliases of the AID must only be used in a manner consistent with the expressed intent of the AID controller."
+                }
+            }
+        }
+    },
+    "additionalProperties": false,
+    "required": [
+        "d",
+        "aliasDesignation",
+        "usageDisclaimer",
+        "issuanceDisclaimer",
+        "termsOfUse"
+    ]
+}

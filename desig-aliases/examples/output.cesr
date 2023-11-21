@@ -1,0 +1,97 @@
+{
+    "v": "KERI10JSON00012b_",
+    "t": "icp",
+    "d": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "i": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "s": "0",
+    "kt": "1",
+    "k": [
+        "DHr0-I-mMN7h6cLMOTRJkkfPuMd0vgQPrOk4Y3edaHjr"
+    ],
+    "nt": "1",
+    "n": [
+        "ELa775aLyane1vdiJEuexP8zrueiIoG995pZPGJiBzGX"
+    ],
+    "bt": "0",
+    "b": [],
+    "c": [],
+    "a": []
+}-VAn-AABAADjfOjbPu9OWce59OQIc-y3Su4kvfC2BAd_e_NLHbXcOK8-3s6do5vBfrxQ1kDyvFGCPMcSl620dLMZ4QDYlvME-EAB0AAAAAAAAAAAAAAAAAAAAAAA1AAG2023-11-21T18c27c48d711824p00c00{
+    "v": "KERI10JSON00013a_",
+    "t": "ixn",
+    "d": "ENyjhb8hQ4gwSI6KU0z-jsqiEo6f_OwfqQPIIG0eeS_Z",
+    "i": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "s": "1",
+    "p": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "a": [
+        {
+            "i": "EFfjfmq3DiHAbVWiF4VA24fP5OEIV1EhWoO-v3ZqmVG6",
+            "s": "0",
+            "d": "EFfjfmq3DiHAbVWiF4VA24fP5OEIV1EhWoO-v3ZqmVG6"
+        }
+    ]
+}-VAn-AABAABG6FsrL1NjedLFVOMj2lI7lt_VIgtX1IPJAxlvv2yUYJz9tTh-lxlzBmz6H5qX2edwQVT4wGv4mC7UD8OepT4J-EAB0AAAAAAAAAAAAAAAAAAAAAAB1AAG2023-11-21T18c27c49d270540p00c00{
+    "v": "KERI10JSON00013a_",
+    "t": "ixn",
+    "d": "EHW16B2fzkyJ9IJhdlGVPE-4V-vtnBt3Ays6szdKgtAr",
+    "i": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "s": "2",
+    "p": "ENyjhb8hQ4gwSI6KU0z-jsqiEo6f_OwfqQPIIG0eeS_Z",
+    "a": [
+        {
+            "i": "EMVnFMfhcw67coSNnH5nqi5fWtFreCNuw6pGVGdMFuSx",
+            "s": "0",
+            "d": "EOFmbwg0q8hD-Rqnng86xHQjAIdpoUIE_0khzYyUTF5t"
+        }
+    ]
+}-VAn-AABAACK-w7OdqtYTRpNTHq9BhrOdi81k1VVBMCwMi57thnYwlGCIH_jWf1Bnkcr3OsrL4qS6iA5niuzqlWhS7nfZXoN-EAB0AAAAAAAAAAAAAAAAAAAAAAC1AAG2023-11-21T18c28c04d050639p00c00{
+    "v": "KERI10JSON000113_",
+    "t": "vcp",
+    "d": "EFfjfmq3DiHAbVWiF4VA24fP5OEIV1EhWoO-v3ZqmVG6",
+    "i": "EFfjfmq3DiHAbVWiF4VA24fP5OEIV1EhWoO-v3ZqmVG6",
+    "ii": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "s": "0",
+    "c": [
+        "NB"
+    ],
+    "bt": "0",
+    "b": [],
+    "n": "APs-mDUZMfibgHlGIOpD18kjcbY5JRLPX4AD23Db1_Y0"
+}-VAS-GAB0AAAAAAAAAAAAAAAAAAAAAABENyjhb8hQ4gwSI6KU0z-jsqiEo6f_OwfqQPIIG0eeS_Z{
+    "v": "KERI10JSON0000ed_",
+    "t": "iss",
+    "d": "EOFmbwg0q8hD-Rqnng86xHQjAIdpoUIE_0khzYyUTF5t",
+    "i": "EMVnFMfhcw67coSNnH5nqi5fWtFreCNuw6pGVGdMFuSx",
+    "s": "0",
+    "ri": "EFfjfmq3DiHAbVWiF4VA24fP5OEIV1EhWoO-v3ZqmVG6",
+    "dt": "2023-11-13T17:41:37.710691+00:00"
+}-VAS-GAB0AAAAAAAAAAAAAAAAAAAAAACEHW16B2fzkyJ9IJhdlGVPE-4V-vtnBt3Ays6szdKgtAr{
+    "v": "ACDC10JSON000514_",
+    "d": "EMVnFMfhcw67coSNnH5nqi5fWtFreCNuw6pGVGdMFuSx",
+    "i": "ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+    "ri": "EFfjfmq3DiHAbVWiF4VA24fP5OEIV1EhWoO-v3ZqmVG6",
+    "s": "EN6Oh5XSD5_q2Hgu-aqpdfbVepdpYpFlgz6zvJL5b_r5",
+    "a": {
+        "d": "EHQgqNNSueVmVjlErrGtzjl-HJya9rMUiNadDSkZQ1kV",
+        "dt": "2023-11-13T17:41:37.710691+00:00",
+        "ids": [
+            "did:webs:foo.com:ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe",
+            "did:web:example.com:ENro7uf0ePmiK3jdTo2YCdXLqW7z7xoP6qhhBou6gBLe"
+        ]
+    },
+    "r": {
+        "d": "EEVTx0jLLZDQq8a5bXrXgVP0JDP7j8iDym9Avfo8luLw",
+        "aliasDesignation": {
+            "l": "The issuer of this ACDC designates the identifiers in the ids field as the only allowed namespaced aliases of the issuer's AID."
+        },
+        "usageDisclaimer": {
+            "l": "This attestation only asserts designated aliases of the controller of the AID, that the AID controlled namespaced alias has been designated by the controller. It does not assert that the controller of this AID has control over the infrastructure or anything else related to the namespace other than the included AID."
+        },
+        "issuanceDisclaimer": {
+            "l": "All information in a valid and non-revoked alias designation assertion is accurate as of the date specified."
+        },
+        "termsOfUse": {
+            "l": "Designated aliases of the AID must only be used in a manner consistent with the expressed intent of the AID controller."
+        }
+    }
+}
